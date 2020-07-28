@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
+const authRoutes = require("./routes/auth");
+
 const app = express();
 
 mongoose
@@ -25,6 +27,9 @@ mongoose
 app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+//Routes
+app.use("/api", authRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log("APPLICATION STARTED");
