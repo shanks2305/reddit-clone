@@ -50,6 +50,7 @@ exports.signin = async (req, res) => {
     .json({
       message: "User Logged Inn",
       token: token,
+      uid: user._id,
     })
     .header("auth-token", token);
 };
@@ -72,4 +73,14 @@ exports.authenticated = (req, res, next) => {
   } catch (err) {
     return res.status(400).json({ error: err });
   }
+};
+
+exports.getUserById = (req, res, next, id) => {
+  User.findById(id).exec((err, user) => {
+    if (err || !user) {
+      return res.status(400).json({ error: "No user found" });
+    }
+    req.profile = user;
+    next();
+  });
 };

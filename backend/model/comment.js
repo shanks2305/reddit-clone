@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema({
   user: {
-    type: ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
   article: {
-    type: ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Article",
   },
   msg: {

@@ -7,6 +7,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const authRoutes = require("./routes/auth");
+const articleRoutes = require("./routes/articles");
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use(cookieParser());
 
 //Routes
 app.use("/api", authRoutes);
+app.use("/api", articleRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log("APPLICATION STARTED");
