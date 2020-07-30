@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dae0e6 !important;
+}
+
+.nav-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white !important;
+  height: 8vh;
+}
+
+.nav-user-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: cursive;
+  margin-left: 20px;
+}
+
+.nav-search-bar {
+  width: 50%;
+}
+.nav-search-bar input {
+  width: 80%;
+  font-size: 1.4rem;
+  background-color: #dae0e6;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
